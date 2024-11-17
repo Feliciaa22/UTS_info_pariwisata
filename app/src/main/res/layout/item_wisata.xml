@@ -1,0 +1,83 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageWisata"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/danau_toba"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Overlay teks -->
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#AA000000"
+        app:layout_constraintBottom_toBottomOf="@id/imageWisata"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Judul tempat Wisata -->
+    <TextView
+        android:id="@+id/titleWisata"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:paddingStart="8dp"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="8dp"
+        android:text="Danau Toba"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/locationContainer"
+        app:layout_constraintEnd_toEndOf="@id/overlay"
+        app:layout_constraintStart_toStartOf="@id/overlay"
+        app:layout_constraintTop_toTopOf="@id/overlay" />
+
+    <!-- Lokasi dan rating container -->
+    <LinearLayout
+        android:id="@+id/locationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/overlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Ikon lokasi -->
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="7dp"
+            android:contentDescription="Location Icon"
+            android:src="@drawable/location"
+            app:tint="@android:color/white" />
+
+        <!-- Nama lokasi -->
+        <TextView
+            android:id="@+id/locationWisata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:paddingStart="2dp"
+            android:text="Sumatra Utara"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:tint="@android:color/white" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
